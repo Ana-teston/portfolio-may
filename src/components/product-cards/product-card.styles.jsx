@@ -9,9 +9,23 @@ export const Container = styled.div`
 export const Grid = styled.div`
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  padding: 40px;
+  padding: 3rem;
+ 
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 3rem  3rem 3rem 6rem;
+  }
+
+  @media screen and (min-width: 1171px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const Card = styled.div`
@@ -22,21 +36,36 @@ export const Card = styled.div`
   border: 1px solid #eee;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  overflow: hidden;
   position: relative;
   cursor: pointer;
 `;
 
 export const CardImg = styled.img`
   width: 100%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
 `;
 
 export const CardTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 20px;
+  margin: 10px 20px 5px 20px;
+
+  @media screen and (max-width: 1170px) {
+    margin: 5px;
+    font-size: 0.75rem;
+  }
+`;
+
+export const CardDescription = styled.h6`
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 5px 20px 20px 20px;
+
+  @media screen and (max-width: 1170px) {
+    margin: 5px;
+    font-size: 0.5rem;
+  }
 `;
 
 export const ProjectPhoto = styled.img`
@@ -59,4 +88,8 @@ export const PhotoBanner = styled.div`
   background-position: center;
   opacity: ${(props) => (props.show ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;

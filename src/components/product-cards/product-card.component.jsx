@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, PhotoBanner, Grid, Card, CardImg, CardTitle, ProjectPhoto } from "./product-card.styles";
+import { Container, PhotoBanner, Grid, Card, CardImg, CardTitle, CardDescription } from "./product-card.styles";
 import { PROJECTS_DATA } from "../../projects-data.js";
 import defaultBanner from "../../assets/default-banner.jpg";
 
@@ -29,6 +29,7 @@ const Projects = () => {
             >
               <CardImg src={project.imageUrl} alt={project.title} />
               <CardTitle>{project.title}</CardTitle>
+              <CardDescription>{project.description}</CardDescription>
             </Card>
           ))}
         </Grid>

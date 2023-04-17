@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+// Half Page Component
+export const HalfPage = styled.div`
+  display: flex;
+  height: 100vh;
+  padding:  3rem 3rem 0rem 3rem;
+  
+  @media (max-width: 550px) {
+    height: 100vh;
+    flex-direction: column;
+  }
+`;
+
 // Info Component
 export const Info = styled.div`
   width: 40%;
@@ -9,7 +21,7 @@ export const Info = styled.div`
   justify-content: center;
   
   @media (max-width: 550px) {
-    width: 100%
+    width: 50%
     height: 100vh;
     flex-direction: column;
     padding: 10px;
@@ -43,14 +55,11 @@ export const Photo = styled.div`
   background-image: url('https://source.unsplash.com/800x800/?portrait');
   background-size: cover;
   background-position: center;
-`;
 
-// Half Page Component
-export const HalfPage = styled.div`
-  display: flex;
-  height: 100vh;
   @media (max-width: 550px) {
+    width: 50%
     height: 100vh;
     flex-direction: column;
   }
 `;
+
